@@ -1,8 +1,12 @@
-# model
+# Model
 maywell/Synatra-7B-Instruct-v0.2
 
-# config
--- <- 기본 config그냥 가져가요
+# Modeling flow
+- 환경 설정 : cat requirements.txt | xargs -n 1 pip install
+- 학습 : sh run.sh
+- 추론 : CUDA_VISIBLE_DEVICES=0 python3 inference.py --model_path /results/maywell/Synatra-7B-Instruct-v0.2/trial-0
+- 추론 이후 final_submission.ipynb 실행
+
 
 # Instruction
 ## train.py
@@ -22,4 +26,8 @@ maywell/Synatra-7B-Instruct-v0.2
 
 ## utils.py
 - baseline code 기반
+
+## final_submission.ipynb
+- submission의 answer col 후처리
+- answer가 0, 1, 2, 3 중 하나가 아닐 경우, 생성된 답변을 토대로 0, 1, 2, 3을 출력할 수 있도록 조정 
 
